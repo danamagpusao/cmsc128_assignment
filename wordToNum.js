@@ -1,3 +1,9 @@
+/***
+A function that converts a words to its numeric form
+****/
+
+//hash map containing values of each word
+
 var first = {};
 first['one'] = 1;
 first['two'] = 2;
@@ -23,7 +29,7 @@ second['nineteen'] = 19;
 
 var third={};
 third['twenty'] = 20;
-third['thirthy'] = 30;
+third['thirty'] = 30;
 third['fourty'] = 40;
 third['fifty'] = 50;
 third['sixty'] = 60;
@@ -36,26 +42,68 @@ fourth['hundred'] = 100;
 fourth['thousand'] = 1000;
 fourth['million'] = 1000000;
 
+
+//functions that converts the words to its numeric form
 function wordToNum(){
-	var w = document.getElementById("words").value;
-	var ws = w.split(" ");
-	var number = 0;
-	for(var i =0; i< ws.length; i++){
+	var nums = [];
+	var w = document.getElementById("words").value; // gets the input from user
+	var ws = w.split(" "); //splits the input delimited by blank space
+	var number = 0; //initializes the number
+	for(var i =0; i<ws.length; i++){
 		if(first[ws[i]] != null){
-			number = number + first[ws[i]];
+				number = number + first[ws[i]];	
+				if(first[ws[i+1]] != null){
+					alert("invalid number!"); // checks if the input is valid
+					return;
+				}
 		}
 		else if(second[ws[i]] != null){
 			number = number + second[ws[i]];
+				if(second[ws[i+1]] != null){
+					alert("invalid number!"); // checks if the input is valid
+					return;
+				}
 			i++;
 		}
 		else if(third[ws[i]]!= null){
 			number = number + third[ws[i]];
+				if(third[ws[i+1]] != null){
+					alert("invalid number!"); // checks if the input is valid
+					return;
+				}
 		}
-		else if(fourth[ws[i]]){
-			number = number * fourth[ws[i]];
+		else if(ws[i] == "hundred"){
+				number = number * 100;
+				if(ws[i+1] == "hundred" ){
+					alert("invalid number!"); // checks if the input is valid
+					return;
+				}
 		}
+		else if(ws[i] == "thousand"){
+				number = number * 1000;
+				nums.push(number);
+				number = 0;
+				if(ws[i+1] == "hundred" || ws[i+1] == "thousand" || ws[i+1] == "million" ){ // checks if the input is valid
+					alert("invalid number!");
+					return;
+				}
+			
+		}
+		else if(ws[i] == "million"){
+				number = number * 1000000;
+				nums.push(number);
+				number = 0;
+				if(ws[i+1] == "hundred" || ws[i+1] == "thousand" || ws[i+1] == "million" ){ // checks if the input is valid
+					alert("invalid number!");
+					return;
+				}
+		}
+		
 	}
-
+	for(var j = 0 ; j<nums.length;j++){
+		number = number + nums[j];
+	}
 	alert(number);
+
 
 }
