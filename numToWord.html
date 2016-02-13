@@ -1,8 +1,17 @@
 <html>
 <head></head>
 <body>
-<input type = "text" size ="7" maxlength="7" id="number"/>
-<button onclick = "numToWord()">Convert to Words</button>
+<script src="wordToNum.js">
+
+
+</script>
+<p><input type = "text" size ="7" maxlength="7" id="number"/>
+<button onclick = "numToWord()">Convert to Words</button></p>
+<p>
+<input type = "text" id="words"/>
+<button onclick = "wordToNum()">Convert to Number</button>
+</p>
+
 <script>
 	var num = document.getElementById("number");
 	

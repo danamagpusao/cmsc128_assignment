@@ -1,47 +1,61 @@
-var ones = {};
-ones['one'] = 1;
-ones['two'] = 2;
-ones['three'] = 3;
-ones['four'] = 4;
-ones['five'] = 5;
-ones['six'] = 6;
-ones['seven'] = 7;
-ones['eight'] = 8;
-ones['nine']=9;
+var first = {};
+first['one'] = 1;
+first['two'] = 2;
+first['three'] = 3;
+first['four'] = 4;
+first['five'] = 5;
+first['six'] = 6;
+first['seven'] = 7;
+first['eight'] = 8;
+first['nine']=9;
 
-var tens = {};
-tens['ten']=10;
-tens['eleven']=11;
-tens['twelve']=12;
-tens['thirteen'] = 13;
-tens['fourteen'] = 14;
-tens['fifteen'] = 15;
-tens['sixteen'] = 16;
-tens['seventeen'] = 17;
-tens['eighteen'] = 18;
-tens['nineteen'] = 19;
+var second = {};
+second['ten']=10;
+second['eleven']=11;
+second['twelve']=12;
+second['thirteen'] = 13;
+second['fourteen'] = 14;
+second['fifteen'] = 15;
+second['sixteen'] = 16;
+second['seventeen'] = 17;
+second['eighteen'] = 18; 
+second['nineteen'] = 19;
 
-var twoDig={};
-twoDig['twenty'] = 20;
-twoDig['thirthy'] = 30;
-twoDig['fourty'] = 40;
-twoDig['fifty'] = 50;
-twoDig['sixty'] = 60;
-twoDig['seventy'] = 70;
-twoDig['eighty'] = 80;
-twoDig['ninety'] = 90;
+var third={};
+third['twenty'] = 20;
+third['thirthy'] = 30;
+third['fourty'] = 40;
+third['fifty'] = 50;
+third['sixty'] = 60;
+third['seventy'] = 70;
+third['eighty'] = 80;
+third['ninety'] = 90;
 
-var others = {};
-others['hundred'] = 100;
-others['thousand'] = 1000;
-others['million'] = 1000000;
+var fourth = {};
+fourth['hundred'] = 100;
+fourth['thousand'] = 1000;
+fourth['million'] = 1000000;
 
 function wordToNum(){
-	var w = document.getElementById("words");
+	var w = document.getElementById("words").value;
 	var ws = w.split(" ");
-
-	for(var i=0;i<ws.length;i++){
-		alert(ws[i]);
+	var number = 0;
+	for(var i =0; i< ws.length; i++){
+		if(first[ws[i]] != null){
+			number = number + first[ws[i]];
+		}
+		else if(second[ws[i]] != null){
+			number = number + second[ws[i]];
+			i++;
+		}
+		else if(third[ws[i]]!= null){
+			number = number + third[ws[i]];
+		}
+		else if(fourth[ws[i]]){
+			number = number * fourth[ws[i]];
+		}
 	}
+
+	alert(number);
 
 }
