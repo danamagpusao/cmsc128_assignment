@@ -4,6 +4,7 @@
 <script src="wordToNum.js"></script>
 <script src="numToWord.js"></script>
 <script src="wordToCur.js"></script>
+<script src="numberDelimited.js"></script>
 
 <p><input type = "text" size ="43" id="input"/><input type = "text" id="cur" maxlength="3" size="3" style="text-transform: uppercase"/>
 </p>
@@ -11,6 +12,15 @@
 <button onclick = "numToWord()">Convert to Words</button>
 <button onclick = "convertNum()">Convert to Number</button>
 <button onclick = "wordToCur()">Convert to Currency</button>
+</p>
+
+<p>
+<input type = "text" size ="40" id="number"/>
+<input type = "text" size ="1" id="del" maxlength="1"/>
+<input type = "text" size ="2" id="offset"/>
+</p>
+<p>
+	<button onclick = "addDelimiter()">Add Delimiter</button>
 </p>
 
 </body>
