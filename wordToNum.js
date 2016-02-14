@@ -42,11 +42,14 @@ fourth['hundred'] = 100;
 fourth['thousand'] = 1000;
 fourth['million'] = 1000000;
 
-
+function convertNum(){
+	var output = wordToNum();
+	alert(output);
+}
 //functions that converts the words to its numeric form
 function wordToNum(){
 	var nums = [];
-	var w = document.getElementById("words").value; // gets the input from user
+	var w = document.getElementById("input").value; // gets the input from user
 	var ws = w.split(" "); //splits the input delimited by blank space
 	var number = 0; //initializes the number
 	for(var i =0; i<ws.length; i++){
@@ -103,7 +106,7 @@ function wordToNum(){
 	for(var j = 0 ; j<nums.length;j++){
 		number = number + nums[j];
 	}
-	alert(number);
+	return number;
 
 
 }

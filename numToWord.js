@@ -5,7 +5,7 @@
 	var others = ["hundred", "thousand", "million"];
 
 	function numToWord(){
-		var value = +(document.getElementById("number").value);
+		var value = +(document.getElementById("input").value);
 		var word = charToWord(value);
 		alert(word);
 

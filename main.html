@@ -3,13 +3,16 @@
 <body>
 <script src="wordToNum.js"></script>
 <script src="numToWord.js"></script>
+<script src="wordToCur.js"></script>
 
-<p><input type = "text" size ="7" maxlength="7" id="number"/>
-<button onclick = "numToWord()">Convert to Words</button></p>
-<p>
-<input type = "text" id="words"/>
-<button onclick = "wordToNum()">Convert to Number</button>
+<p><input type = "text" size ="43" id="input"/><input type = "text" id="cur" maxlength="3" size="3" style="text-transform: uppercase"/>
 </p>
+<p>
+<button onclick = "numToWord()">Convert to Words</button>
+<button onclick = "convertNum()">Convert to Number</button>
+<button onclick = "wordToCur()">Convert to Currency</button>
+</p>
+
 </body>
 
 </html>
