@@ -1,28 +1,40 @@
+<!-- 
+ 	Author: Dana Jasmin A. Magpusao
+ 	Date Finished : February 14, 2016
+-->
 <html>
-<head></head>
-<body>
-<script src="wordToNum.js"></script>
-<script src="numToWord.js"></script>
-<script src="wordToCur.js"></script>
-<script src="numberDelimited.js"></script>
+	<head></head>
+	<body>
+		<!-- Imports functions -->
+		<script src="wordToNum.js"></script>
+		<script src="numToWord.js"></script>
+		<script src="wordToCur.js"></script>
+		<script src="numberDelimited.js"></script>
 
-<p><input type = "text" size ="43" id="input"/><input type = "text" id="cur" maxlength="3" size="3" style="text-transform: uppercase"/>
-</p>
-<p>
-<button onclick = "numToWord()">Convert to Words</button>
-<button onclick = "convertNum()">Convert to Number</button>
-<button onclick = "wordToCur()">Convert to Currency</button>
-</p>
+		<!-- textbox for inputs of numToWord(), wordToNum() and wordToCur()-->
+		<p> 
+			<input type = "text" size ="37" id="input" placeholder = "Number in word form or numeric form"/>
+			<input type = "text" id="cur" maxlength="3" size="9" 
+			style="text-transform: uppercase"
+			placeholder = "currency"/>
+		</p>
+		<!-- button executing numToWord(), wordToNum() and wordToCur()-->
+		<p>
+			<button onclick = "numToWord()">Convert to Words</button>
+			<button onclick = "convertNum()">Convert to Number</button>
+			<button onclick = "wordToCur()">Convert to Currency</button>
+		</p>
+		<!-- textbox for inputs of numberDelimited()-->
+		<p>
+			<input type = "text" size ="30" id="number" placeholder = "Number in numeric form"/>
+			<input type = "text" size ="6" id="del" maxlength="1" placeholder = "delimiter"/>
+			<input type = "text" size ="7" id="offset" placeholder = "offset"/>
+		</p>
+		<!-- button executing addDelimiter()-->
+		<p>
+			<button onclick = "addDelimiter()">Add Delimiter</button>
+		</p>
 
-<p>
-<input type = "text" size ="40" id="number"/>
-<input type = "text" size ="1" id="del" maxlength="1"/>
-<input type = "text" size ="2" id="offset"/>
-</p>
-<p>
-	<button onclick = "addDelimiter()">Add Delimiter</button>
-</p>
-
-</body>
+	</body>
 
 </html>

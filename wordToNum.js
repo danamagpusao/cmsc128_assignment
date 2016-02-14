@@ -46,21 +46,26 @@ function convertNum(){
 	var output = wordToNum();
 	alert(output);
 }
-//functions that converts the words to its numeric form
+/***
+functions that converts the words to its numeric form
+>if the word is "thousand" or "million" it will push 
+the current value of number to the array nums.
+***/
+
 function wordToNum(){
 	var nums = [];
 	var w = document.getElementById("input").value; // gets the input from user
 	var ws = w.split(" "); //splits the input delimited by blank space
 	var number = 0; //initializes the number
 	for(var i =0; i<ws.length; i++){
-		if(first[ws[i]] != null){
+		if(first[ws[i]] != null){ //checks if the word is in the hash map
 				number = number + first[ws[i]];	
 				if(first[ws[i+1]] != null){
 					alert("invalid number!"); // checks if the input is valid
 					return;
 				}
 		}
-		else if(second[ws[i]] != null){
+		else if(second[ws[i]] != null){ //checks if the word is in the hash map
 			number = number + second[ws[i]];
 				if(second[ws[i+1]] != null){
 					alert("invalid number!"); // checks if the input is valid
@@ -68,21 +73,21 @@ function wordToNum(){
 				}
 			i++;
 		}
-		else if(third[ws[i]]!= null){
+		else if(third[ws[i]]!= null){ //checks if the word is in the hash map
 			number = number + third[ws[i]];
 				if(third[ws[i+1]] != null){
 					alert("invalid number!"); // checks if the input is valid
 					return;
 				}
 		}
-		else if(ws[i] == "hundred"){
+		else if(ws[i] == "hundred"){//checks if the word is in the hash map
 				number = number * 100;
 				if(ws[i+1] == "hundred" ){
 					alert("invalid number!"); // checks if the input is valid
 					return;
 				}
 		}
-		else if(ws[i] == "thousand"){
+		else if(ws[i] == "thousand"){//checks if the word is in the hash map
 				number = number * 1000;
 				nums.push(number);
 				number = 0;
@@ -92,7 +97,7 @@ function wordToNum(){
 				}
 			
 		}
-		else if(ws[i] == "million"){
+		else if(ws[i] == "million"){//checks if the word is in the hash map
 				number = number * 1000000;
 				nums.push(number);
 				number = 0;
@@ -103,9 +108,11 @@ function wordToNum(){
 		}
 		
 	}
+	//computes the total of converted numbers
 	for(var j = 0 ; j<nums.length;j++){
 		number = number + nums[j];
 	}
+	//returns the number in numeric form
 	return number;
 
 
